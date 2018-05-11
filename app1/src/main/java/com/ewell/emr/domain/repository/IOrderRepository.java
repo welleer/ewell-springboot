@@ -4,7 +4,7 @@ public interface IOrderRepository {
 
     void addOrder(int id);
 
-    void modifyOrder();
+    void modifyOrder(int id);
 
     void deleteOrder();
 }

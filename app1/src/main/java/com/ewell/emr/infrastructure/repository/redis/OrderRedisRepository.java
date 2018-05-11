@@ -12,16 +12,16 @@ public class OrderRedisRepository implements IOrderRepository {
 
 	@Override
 	public void addOrder(int id) {
-		System.out.println("addOrder:"+id);
+		System.out.println("addOrder1:"+id);
 	}
 
 	@Override
-	public void modifyOrder() {
-		System.out.println("modifyOrder");
+	public void modifyOrder(int id)  {
+		System.out.println("modifyOrder1"+id);
 	}
 
 	@Override
 	public void deleteOrder() {
-		System.out.println("deleteOrder");
+		System.out.println("deleteOrder1");
 	}
 }

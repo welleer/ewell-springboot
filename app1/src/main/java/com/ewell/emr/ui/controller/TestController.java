@@ -1,10 +1,8 @@
 package com.ewell.emr.ui.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.ewell.emr.application.service.IOrderService;
+import com.ewell.emr.application.service.app2.IOrder2Service;
 import com.ewell.emr.infrastructure.dao.mysql.UserMapper;
-import com.ewell.emr.infrastructure.entity.mysql.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +21,7 @@ public class TestController {
 //    @Resource
 //    private IOrderService orderService;
     @Reference(version="1.0")
-    IOrderService orderService;
+IOrder2Service order2Service;
 
     /**
      *  test
@@ -34,7 +32,7 @@ public class TestController {
     public String test(@PathVariable int id) {
 //        User user = userMapper.findUserById();
 //        System.out.println(user.toString());
-        orderService.add(id);
+        order2Service.add(id);
         return "test";
     }
 //

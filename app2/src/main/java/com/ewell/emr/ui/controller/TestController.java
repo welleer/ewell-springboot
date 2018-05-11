@@ -1,6 +1,7 @@
 package com.ewell.emr.ui.controller;
 
-import com.ewell.emr.application.service.IOrderService;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.ewell.emr.application.service.app1.IOrderService;
 import com.ewell.emr.infrastructure.dao.mysql.UserMapper;
 import com.ewell.emr.infrastructure.entity.mysql.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class TestController {
     @Resource
     public UserMapper userMapper;
 
-    @Resource
-    private IOrderService orderService;
+    @Reference(version="1.0")
+    IOrderService orderService;
 
 
     /**
@@ -32,7 +33,7 @@ public class TestController {
     public String test(@PathVariable int id) {
 //        User user = userMapper.findUserById();
 //        System.out.println(user.toString());
-        orderService.add(id);
+        orderService.modify(id);
         return "test";
     }
 //
