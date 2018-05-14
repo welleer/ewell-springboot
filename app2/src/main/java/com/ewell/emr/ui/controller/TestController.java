@@ -3,8 +3,6 @@ package com.ewell.emr.ui.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.ewell.emr.application.service.app1.IOrderService;
 import com.ewell.emr.infrastructure.dao.mysql.UserMapper;
-import com.ewell.emr.infrastructure.entity.mysql.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

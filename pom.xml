@@ -119,6 +119,7 @@
 	<modules>
 		<module>app1</module>
 		<module>app2</module>
-    </modules>
+		<module>service</module>
+	</modules>
 
 </project>
