@@ -18,7 +18,7 @@ public class TestController {
     @Resource
     public UserMapper userMapper;
 
-    @Reference(version="1.0")
+    @Reference(version="1.0",check = false)
     IOrderService orderService;
 
 

@@ -24,7 +24,7 @@ public class TestController {
 //    PatientMapper patientService;
     @Resource
     public IPatientService patientService;
-    @Reference(version="1.0")
+    @Reference(version="1.0",check = false)
     IOrder2Service order2Service;
 
     /**
