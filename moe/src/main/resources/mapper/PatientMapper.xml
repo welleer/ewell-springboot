@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="liwei.mapper.PatientMapper">
+  <resultMap id="BaseResultMap" type="liwei.domain.PatientDO">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="CLINIC_NO" jdbcType="VARCHAR" property="CLINIC_NO" />
+    <result column="ENGLISH_NAME" jdbcType="VARCHAR" property="ENGLISH_NAME" />
+    <result column="CHINESE_NAME" jdbcType="VARCHAR" property="CHINESE_NAME" />
+    <result column="GENDER" jdbcType="VARCHAR" property="GENDER" />
+    <result column="AGE" jdbcType="VARCHAR" property="AGE" />
+    <result column="CARD_NUMBER" jdbcType="VARCHAR" property="CARD_NUMBER" />
+    <result column="APPOINTMENT" jdbcType="VARCHAR" property="APPOINTMENT" />
+    <result column="STATUS" jdbcType="VARCHAR" property="STATUS" />
+  </resultMap>
+</mapper>

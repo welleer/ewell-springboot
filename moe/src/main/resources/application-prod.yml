@@ -1,0 +1,20 @@
+#服务端口
+server:
+  port: 5555
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: liwei
+    password: liwei
+    driverClassName: oracle.jdbc.OracleDriver
+
+mybatis:
+    type-aliases-package: liwei.domain
+    mapper-locations: classpath:mapper/*.xml
+
+mapper:
+    mappers: tk.mybatis.mapper.common.Mapper
+    not-empty: false
+    identity: oracle
+    style: normal.

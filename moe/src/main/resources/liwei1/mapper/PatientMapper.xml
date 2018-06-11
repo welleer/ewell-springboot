@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="liwei1.dao.PatientMapper">
+  <resultMap id="BaseResultMap" type="liwei1.model.Patient">
+    <id column="CLINIC_NO" jdbcType="VARCHAR" property="clinicNo" />
+    <result column="ENGLISH_NAME" jdbcType="VARCHAR" property="englishName" />
+    <result column="CHINESE_NAME" jdbcType="VARCHAR" property="chineseName" />
+    <result column="GENDER" jdbcType="VARCHAR" property="gender" />
+    <result column="AGE" jdbcType="VARCHAR" property="age" />
+    <result column="CARD_NUMBER" jdbcType="VARCHAR" property="cardNumber" />
+    <result column="APPOINTMENT" jdbcType="VARCHAR" property="appointment" />
+    <result column="STATUS" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from PATIENT
+    where CLINIC_NO = #{clinicNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="liwei1.model.Patient">
+    insert into PATIENT (CLINIC_NO, ENGLISH_NAME, CHINESE_NAME, 
+      GENDER, AGE, CARD_NUMBER, 
+      APPOINTMENT, STATUS)
+    values (#{clinicNo,jdbcType=VARCHAR}, #{englishName,jdbcType=VARCHAR}, #{chineseName,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, #{cardNumber,jdbcType=VARCHAR}, 
+      #{appointment,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="liwei1.model.Patient">
+    update PATIENT
+    set ENGLISH_NAME = #{englishName,jdbcType=VARCHAR},
+      CHINESE_NAME = #{chineseName,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      AGE = #{age,jdbcType=VARCHAR},
+      CARD_NUMBER = #{cardNumber,jdbcType=VARCHAR},
+      APPOINTMENT = #{appointment,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR}
+    where CLINIC_NO = #{clinicNo,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select CLINIC_NO, ENGLISH_NAME, CHINESE_NAME, GENDER, AGE, CARD_NUMBER, APPOINTMENT, 
+    STATUS
+    from PATIENT
+    where CLINIC_NO = #{clinicNo,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select CLINIC_NO, ENGLISH_NAME, CHINESE_NAME, GENDER, AGE, CARD_NUMBER, APPOINTMENT, 
+    STATUS
+    from PATIENT
+  </select>
+</mapper>

@@ -1,0 +1,4 @@
+#配置模式
+spring:
+  profiles:
+    active: prod
